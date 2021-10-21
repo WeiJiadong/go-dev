@@ -78,7 +78,7 @@ Shutdown(context.Background())
 
 #### 1.2.2 创建带取消控制的Context
 
-使用context.WithCancel()创建带取消控制的ctx。context.WithCancel()会返回context和cancle函数, 通过调用cancle函数则可以完成对应context的cancle。
+使用context.WithCancel()创建带取消控制的ctx。context.WithCancel()会返回context和cancel函数, 通过调用cancel函数则可以完成对应context的cancel。
 
 ``` gp
 func WithCancel(parent Context) (ctx Context, cancel CancelFunc) {
@@ -95,7 +95,7 @@ func newCancelCtx(parent Context) cancelCtx {
 }
 ```
 
-实际使用context.WithCancel()创建带取消控制的ctx时, 通过调用cancle函数则可以完成对应context的cancle, 由于关闭了context的Done对应的channel, 因此这里会输出对应的错误信息。
+实际使用context.WithCancel()创建带取消控制的ctx时, 通过调用cancel函数则可以完成对应context的cancel, 由于关闭了context的Done对应的channel, 因此这里会输出对应的错误信息。
 
 ``` go
 cancelCtx, cancel := context.WithCancel(ctx)
